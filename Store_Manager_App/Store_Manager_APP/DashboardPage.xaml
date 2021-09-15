@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Store_Manager_APP.Pages;assembly=Store_Manager_APP"
+             x:Class="Store_Manager_APP.DashboardPage">
+    <!--Pages can be added as references or inline-->
+  <NavigationPage Title="Dashboard" BackgroundColor="DimGray" >
+      <x:Arguments>
+          <pages:DashTabPage />
+      </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Inventory" BackgroundColor="DimGray" >
+        <x:Arguments>
+          <pages:InventoryTabPage />
+      </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Bills" BackgroundColor="DimGray" >
+      <x:Arguments>
+          <pages:BillsTabPage />
+      </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

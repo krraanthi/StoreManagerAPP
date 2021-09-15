@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Store_Manager_APP.Pages.BillsTabPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text=" Create Bill "
+                     Clicked="OnBillCreateClicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <ListView x:Name="BillsList"
+                      HasUnevenRows="true"
+                      ItemSelected="OnListViewBillSelected">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="5">
+                                <Frame CornerRadius="15"
+                                       HorizontalOptions="Fill"
+                                       Padding="8"
+                                       BackgroundColor="#d96c6c">
+                                    <StackLayout>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0"
+                                                   Text="{Binding Name}"
+                                                   FontSize="Medium"
+                                                   FontAttributes="Bold" />
+                                            <Label Grid.Column="1" Text="Amount : " />
+                                            <Label Grid.Column="2" Text="{Binding Amount}" />
+                                        </Grid>
+
+                                        <BoxView Color="Wheat"
+                                                 HeightRequest="2"
+                                                 HorizontalOptions="Fill" />
+                                        <Grid Margin="5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0"  Text="{Binding TotalQuantity}" />
+                                            <Label Grid.Column="0"  Text="   Items" />
+                                            <Label Grid.Column="1" Text="{Binding Location}" />
+                                            <Label Grid.Column="2"  Text="{Binding BillDate}" />
+                                        </Grid>
+
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

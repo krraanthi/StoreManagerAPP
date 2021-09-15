@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Store_Manager_APP.Pages.CreateBillPage">
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+            <Label FontSize="Title"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White"
+                   FontAttributes="Bold">Create New Bill</Label>
+            <Frame CornerRadius="15"
+                   HorizontalOptions="Fill"
+                   Padding="8"
+                   BackgroundColor="#d96c6c">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0"
+                               Text="Customer Name : "
+                               FontSize="Medium"/>
+                    <Entry Grid.Row="0" Grid.Column="1"
+                           Placeholder="Enter Name of Customer"
+                           Text="{Binding Name}"/>
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Location : "
+                           FontSize="Medium"/>
+                    <Picker Grid.Row="1" Grid.Column="1" Title="Select Location"
+                            SelectedItem="{Binding Location}">
+                        <Picker.Items>
+                            <x:String>Home</x:String>
+                            <x:String>Store</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Row="2" Grid.Column="0"
+                           Text="Select Items : "
+                           FontSize="Medium"/>
+                    <Picker Grid.Row="2" Grid.Column="1" x:Name="ItemsPicker"
+                           Title="Select Item"
+                           SelectedIndexChanged="ItemSelected"/>
+                </Grid>
+            </Frame>
+            <ListView x:Name="BillItemsList"
+                      HasUnevenRows="true">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="5">
+                                <Frame CornerRadius="15"
+                                       HorizontalOptions="Fill"
+                                       Padding="8"
+                                       BackgroundColor="#c1cc5c">
+                                    <StackLayout>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0"
+                                                   Text="{Binding Name}"
+                                                   FontSize="Medium"
+                                                   FontAttributes="Bold" />
+                                            <Label Grid.Column="1" Text="Quantity : " />
+                                            <Entry Grid.Column="2"
+                                                   Keyboard="Numeric"
+                                                   TextChanged="QuantityChanged"
+                                                   Text="{Binding Quantity}"/>
+                                        </Grid>
+
+                                        <BoxView Color="Wheat"
+                                                 HeightRequest="2"
+                                                 HorizontalOptions="Fill" />
+                                        <Grid Margin="5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0"  Text="{Binding Price}" />
+                                            <Label Grid.Column="1" Text="{Binding Size}" />
+                                            <Label Grid.Column="2"  Text="{Binding Type}" />
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="1" 
+                        Text="Create Bill"
+                        CornerRadius="15"
+                        Clicked="CreateNewBill"
+                        BackgroundColor="Green"
+                        TextColor="White"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

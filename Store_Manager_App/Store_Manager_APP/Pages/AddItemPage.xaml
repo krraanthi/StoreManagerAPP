@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Store_Manager_APP.Pages.AddItemPage">
+    <ContentPage.Content>
+        <StackLayout Margin="5">
+            <Label FontSize="Title"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="White"
+                   FontAttributes="Bold">Add New Item</Label>
+            <Frame CornerRadius="15"
+                   HorizontalOptions="Fill"
+                   Padding="8"
+                   BackgroundColor="#c1cc5c">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0"
+                               Text="Name : "
+                               FontSize="Medium"/>
+                    <Entry Grid.Row="0" Grid.Column="1"
+                           Placeholder="Enter Name of Item"
+                           Text="{Binding Name}"/>
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Type : "
+                           FontSize="Medium"/>
+                    <Picker Grid.Row="1" Grid.Column="1" Title="Select Type"
+                            SelectedItem="{Binding Type}">
+                        <Picker.Items>
+                            <x:String>Packed</x:String>
+                            <x:String>Pre-Packed</x:String>
+                            <x:String>Loose</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Row="2" Grid.Column="0"
+                           Text="Size : "
+                           FontSize="Medium"/>
+                    <Picker Grid.Row="2" Grid.Column="1" Title="Select Size"
+                            SelectedItem="{Binding Size}">
+                        <Picker.Items>
+                            <x:String>1Kg</x:String>
+                            <x:String>500Gm</x:String>
+                            <x:String>250Gm</x:String>
+                            <x:String>100Gm</x:String>
+                            <x:String>50Gm</x:String>
+                            <x:String>₹5Packet</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Row="3" Grid.Column="0"
+                               Text="Location : "
+                               FontSize="Medium"/>
+                    <Picker Grid.Row="3" Grid.Column="1" Title="Select Location"
+                            SelectedItem="{Binding Location}">
+                        <Picker.Items>
+                            <x:String>Home</x:String>
+                            <x:String>Store</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Grid.Row="4" Grid.Column="0"
+                           Text="Quantity : "
+                           FontSize="Medium"/>
+                    <Entry Grid.Row="4" Grid.Column="1"
+                           Placeholder="Enter Quantity of Item"
+                           Keyboard="Numeric"
+                           Text="{Binding Quantity}"/>
+                    <Label Grid.Row="5" Grid.Column="0"
+                           Text="Cost : "
+                           FontSize="Medium"/>
+                    <Entry Grid.Row="5" Grid.Column="1"
+                           Placeholder="Enter Cost of Item"
+                           Keyboard="Numeric"
+                           Text="{Binding Cost}"/>
+                    <Label Grid.Row="6" Grid.Column="0"
+                               Text="Price : "
+                               FontSize="Medium"/>
+                    <Entry Grid.Row="6" Grid.Column="1"
+                           Placeholder="Enter Price of Item"
+                           Keyboard="Numeric"
+                           Text="{Binding Price}"/>
+                </Grid>
+            </Frame>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="1" 
+                        Text="Add Item"
+                        CornerRadius="15"
+                        Clicked="AddNewItem"
+                        BackgroundColor="Green"
+                        TextColor="White"/>
+            </Grid>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

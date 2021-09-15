@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Store_Manager_APP.Pages.DashTabPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text=" Add Item "
+                     Clicked="OnItemAddClicked"/>
+        <ToolbarItem Text=" Create New Bill "
+                     Clicked="OnBillCreate"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Frame CornerRadius="15"
+                   HorizontalOptions="Fill"
+                   Padding="8"
+                   BackgroundColor="#f0a732">
+                <StackLayout>
+                    <Label Text="Total No of Items in Stock:"
+                           FontSize="Medium"
+                           FontAttributes="Bold" />
+                    <BoxView Color="Wheat"
+                             HeightRequest="2"
+                             HorizontalOptions="Fill" />
+                    <Label  Text="{Binding TotalItems}" />
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="15"
+                   HorizontalOptions="Fill"
+                   Padding="8"
+                   BackgroundColor="#f0a732">
+                <StackLayout>
+                    <Label Text="Total Worth of Stock:"
+                           FontSize="Medium"
+                           FontAttributes="Bold" />
+                    <BoxView Color="Wheat"
+                             HeightRequest="2"
+                             HorizontalOptions="Fill" />
+                    <Label  Text="{Binding TotalWorth}" />
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="15"
+                   HorizontalOptions="Fill"
+                   Padding="8"
+                   BackgroundColor="#f0a732">
+                <StackLayout>
+                    <Label Text="Total No Of Bills:"
+                           FontSize="Medium"
+                           FontAttributes="Bold" />
+                    <BoxView Color="Wheat"
+                             HeightRequest="2"
+                             HorizontalOptions="Fill" />
+                    <Label  Text="{Binding TotalBills}"/>
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="15"
+                   HorizontalOptions="Fill"
+                   Padding="8"
+                   BackgroundColor="#f0a732">
+                <StackLayout>
+                    <Label Text="Total Amount Received:"
+                           FontSize="Medium"
+                           FontAttributes="Bold" />
+                    <BoxView Color="Wheat"
+                             HeightRequest="2"
+                             HorizontalOptions="Fill" />
+                    <Label   Text="{Binding TotalAmount}" />
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="15"
+                   HorizontalOptions="Fill"
+                   Padding="8"
+                   BackgroundColor="#f0a732">
+                <StackLayout>
+                    <Label Text="No of Bills in This Month:"
+                           FontSize="Medium"
+                           FontAttributes="Bold" />
+                    <BoxView Color="Wheat"
+                             HeightRequest="2"
+                             HorizontalOptions="Fill" />
+                    <Label  Text="{Binding MonthlyBills}"/>
+                </StackLayout>
+            </Frame>
+            <Frame CornerRadius="15"
+                   HorizontalOptions="Fill"
+                   Padding="8"
+                   BackgroundColor="#f0a732">
+                <StackLayout>
+                    <Label Text="Amount Received in This Month:"
+                           FontSize="Medium"
+                           FontAttributes="Bold" />
+                    <BoxView Color="Wheat"
+                             HeightRequest="2"
+                             HorizontalOptions="Fill" />
+                    <Label   Text="{Binding MonthlyAmount}" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
